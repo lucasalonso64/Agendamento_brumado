@@ -1,0 +1,46 @@
+<div class="content p-1">
+    <div class="list-group-item">
+        <div class="d-flex">
+            <div class="mr-auto p-2">
+                <h2 class="display-4 titulo">Editar status do chamado</h2>
+            </div>
+            <div class="p-2">
+                <span class="d-none d-md-block">
+                    <a href="/admin/status" class="btn btn-outline-info btn-sm">Listar</a>
+                    <a href="/admin/vis-cat-chamado/{{catchamados._id}}"
+                        class="btn btn-outline-primary btn-sm">Visualizar</a>
+                    <a href="/admin/del-cat-chamado/{{catchamados._id}}" class="btn btn-outline-danger">Apagar</a>
+                </span>
+                <div class="dropdown d-block d-md-none">
+                    <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="acoesListar"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Ações
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
+                        <a class="dropdown-item" href="/admin/status">Listar</a>
+                        <a class="dropdown-item" href="/admin/vis-chamados/{{catchamados._id}}">Visualizar</a>
+                        <a class="dropdown-item" href="/admin/del-cat-chamado/{{catchamados._id}}" data-toggle="modal"
+                            data-target="#apagarRegistro">Apagar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{>_msg}}<hr>
+        <hr>
+        <form action="/admin/update-status-chamado" method="POST">
+            <input type="hidden" name="id" value="{{status._id}}">
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label><span class="text-danger">*</span> Descrição</label>
+                    <input name="descricao" type="text" class="form-control" id="nome"
+                        placeholder="Nome da categoria do chamado" value="{{status.descricao}}">
+                </div>
+            </div>
+
+            <p>
+                <span class="text-danger">* </span>Campo obrigatório
+            </p>
+            <button type="submit" class="btn btn-warning">salvar</button>
+        </form>
+    </div>
+</div>

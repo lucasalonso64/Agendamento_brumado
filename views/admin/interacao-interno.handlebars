@@ -1,0 +1,109 @@
+<!-- O código acima é referente ao cabeçalho -->
+
+<div class="content p-1">
+
+
+    <div class="list-group-item">
+        <div class="col-md-6">
+            <h5><b>Chamado: #{{chamado.numero}}</b></h5>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+
+                            </div>
+                            <div class="col-md-6">
+                                Solicitante:
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                Destino:
+                            </div>
+                            <div class="col-md-6">
+                                Aberto em: {{chamado.created}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                Status atual:
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="mr-auto p-2">
+                <h2 class="display-4 titulo">Interação Trâmite Interno</h2>
+            </div>
+            <div class="p-2">
+                <span class="d-none d-md-block">
+                    <a href="/admin/meuschamados" class="btn btn-outline-info btn-sm">Listar</a>
+                    
+                  
+
+                </span>
+                <div class="dropdown d-block d-md-none">
+                    <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="acoesListar"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Ações
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
+                        <a class="dropdown-item" href="/admin/status">Listar</a>
+                        <a class="dropdown-item" href="/admin/vis-chamados/{{catchamados._id}}">Visualizar</a>
+                        <a class="dropdown-item" href="/admin/del-cat-chamado/{{catchamados._id}}" data-toggle="modal"
+                            data-target="#apagarRegistro">Apagar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{>_msg}}
+     
+
+        <hr>
+    
+        
+
+        <hr>
+        
+
+        <form action="/admin/update-interacao-chamado" method="POST">
+             <input type="hidden" name="tipotramite" value="Interno">
+            <input type="hidden" name="id" value="{{chamado._id}}">
+           
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label><span class="text-danger">*</span> Numero do Chamado: </label>
+                    <input name="numerochamado" type="text" class="form-control" id="numerochamado"
+                        placeholder="Nome da categoria do chamado" value="{{chamado.numero}}">
+                </div>
+
+                <div class="form-group col-md-12">
+                  
+                    <input type="hidden" name="assunto" type="text" class="form-control" id="nome"
+                        placeholder="Nome da categoria do chamado" value="{{chamado.assunto}}">
+                </div>
+                <div class="form-group col-md-12">
+               
+                    <input type="hidden" name="descricao" type="text" class="form-control" id="nome"
+                        placeholder="Nome da categoria do chamado" value="{{chamado.descricao}}">
+                </div>
+            </div>
+
+      
+            <div class="form-group">
+                <label for="descricao">Responder:</label>
+                <textarea  class="form-control" style="height:200px;" name="textointeracao"
+                    id="textointeracao"></textarea>
+            </div>  
+
+
+
+            <button type="submit" class="btn btn-warning">salvar</button>
+        </form>
+    </div>
+</div>

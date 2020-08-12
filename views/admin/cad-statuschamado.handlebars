@@ -1,0 +1,32 @@
+<div class="content p-1">
+    <div class="list-group-item">
+        <div class="d-flex">
+            <div class="mr-auto p-2">
+                <h2 class="display-4 titulo">Cadastrar status</h2>
+            </div>
+            <div class="p-2">
+                <a href="/admin/status">
+                    <button class="btn btn-outline-info btn-sm">
+                        Listar
+                    </button>
+                </a>
+            </div>
+        </div>
+         {{>_msg}}
+    <hr>
+    <form action="/admin/add-status-chamado" method="POST">
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label><span class="text-danger">*</span> Descrição</label>
+                <input name="descricao" type="text" class="form-control" id="descricao"
+                    placeholder="Nome da categoria do chamado">
+            </div>
+        </div>
+
+        <p>
+            <span class="text-danger">* </span>Campo obrigatório
+        </p>
+        <button type="submit" class="btn btn-success">Cadastrar</button>
+    </form>
+</div>
+</div>

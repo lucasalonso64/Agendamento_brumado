@@ -1,0 +1,25 @@
+{
+  "name": "projeto_pratico",
+  "version": "1.0.0",
+  "description": "Projeto pratico",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cesar - Celke",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "consign": "^0.1.6",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.1",
+    "moment": "^2.25.3",
+    "mongoose": "^5.7.4",
+    "mongoose-auto-increment": "^5.0.1",
+    "mongoose-sequence": "^5.2.2",
+    "nodemailer": "^6.4.6"
+  }
+}

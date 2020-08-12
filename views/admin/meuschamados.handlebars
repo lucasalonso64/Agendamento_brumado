@@ -1,0 +1,69 @@
+<div class="content p-1">
+    <div class="list-group-item">
+        <div class="d-flex">
+            <div class="mr-auto p-2">
+                <h2 class="display-4 titulo">Meus Chamados</h2>
+            </div>
+            <div class="p-2">
+                <a href="/admin/cad-chamado">
+                    <button class="btn btn-outline-success btn-sm">
+                        Cadastrar
+                    </button>
+                </a>
+            </div>
+
+             <div class="p-2">
+                <a href="/admin/chamados">
+                    <button class="btn btn-outline-success btn-sm">
+                        Todos chamados
+                    </button>
+                </a>
+            </div>
+
+            <div class="p-2">
+                <a href="/admin/chamadosencerrados">
+                    <button class="btn btn-outline-success btn-sm">
+                        Encerrados
+                    </button>
+                </a>
+            </div>
+        </div>
+        <hr>
+        {{>_msg}}
+
+        <table></table>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>Número</th>
+                        <th>Data de abertura</th>
+                        <th class="text-center">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each chamados}}
+                    <tr>
+                        <td>
+                            <a href="/admin/interacao-chamados/{{_id}}">
+                               Chamado
+                                {{numero}} - {{assunto}}
+                            </a>
+                        </td>                       
+
+                        <td>{{created}}</td>
+                        <td class="text-center">
+                            {{status}}                          
+                           
+                        </td>
+                    </tr>
+                    {{/each}}
+
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,55 @@
+<div class="content p-1">
+    <div class="list-group-item">
+        <div class="d-flex">
+            <div class="mr-auto p-2">
+                <h2 class="display-4 titulo">Assumir chamado</h2>
+            </div>
+            <div class="p-2">
+                <span class="d-none d-md-block">
+                    <a href="/admin/chamados" class="btn btn-outline-info btn-sm">Listar</a>
+                </span>
+                <div class="dropdown d-block d-md-none">
+                    <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="acoesListar"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Ações
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
+                        <a class="dropdown-item" href="/admin/chamados">Listar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{>_msg}}
+        <hr>
+        <hr>
+
+        <dl class="row">
+            <dt class="col-sm-3">Numero do chamado:</dt>
+            <dd class="col-sm-9">{{chamado.numero}}</dd>
+
+            <dt class="col-sm-3">Assunto:</dt>
+            <dd class="col-sm-9">{{chamado.assunto}}</dd>
+
+            <dt class="col-sm-3">Descrição:</dt>
+            <dd class="col-sm-9">{{chamado.descricao}}</dd>
+
+            <dt class="col-sm-3">Data de abertura:</dt>
+            <dd class="col-sm-9">{{chamado.createdAt}}</dd>
+        </dl>
+
+        <hr>
+        <form action="/admin/update-assumir-chamado" method="POST">
+            <input type="hidden" name="id" value="{{chamado._id}}">
+            <div class="form-row">
+                <div class="form-group col-md-12">
+
+                    <input type="hidden" name="nome" type="text" class="form-control" id="nome"
+                        placeholder="Nome da categoria do chamado" value="{{catchamados.nome}}">
+                </div>
+            </div>
+
+
+            <button type="submit" class="btn btn-success">Assumir</button>
+        </form>
+    </div>
+</div>

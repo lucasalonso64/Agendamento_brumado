@@ -1,0 +1,38 @@
+<div class="content p-1">
+    <div class="list-group-item">
+        <div class="d-flex">
+            <div class="mr-auto p-2">
+                <h2 class="display-4 titulo">Cadastro de interações</h2>
+            </div>
+            <div class="p-2">
+                <a href="/admin/cat-chamados">
+                    <button class="btn btn-outline-info btn-sm">
+                        Listar
+                    </button>
+                </a>
+            </div>
+        </div>
+         {{>_msg}}
+    <hr>
+    <form action="/admin/add-interacaoteste" method="POST">
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label><span class="text-danger">*</span> Interação:</label>
+                <input name="textointeracao" type="text" class="form-control" id="textointeracao"
+                    placeholder="Informe a interação">
+            </div>
+
+            <div class="form-group col-md-12">
+                <label><span class="text-danger">*</span> Numero do chamado</label>
+                <input name="numerochamado" type="number" class="form-control" id="numerochamado"
+                    placeholder="Informe o número do chamado">
+            </div>
+        </div>
+
+        <p>
+            <span class="text-danger">* </span>Campo obrigatório
+        </p>
+        <button type="submit" class="btn btn-success">Cadastrar</button>
+    </form>
+</div>
+</div>
