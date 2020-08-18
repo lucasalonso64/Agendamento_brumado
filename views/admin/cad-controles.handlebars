@@ -1,0 +1,58 @@
+<div class="content p-1">
+    <div class="list-group-item">
+        <div class="d-flex">
+            <div class="mr-auto p-2">
+                <h2 class="display-4 titulo">Cadastrole de combustível</h2>
+            </div>
+            <div class="p-2">
+                <a href="/admin/controles">
+                    <button class="btn btn-outline-info btn-sm">
+                        Listar
+                    </button>
+                </a>
+            </div>
+        </div>
+        {{>_msg}}
+        <hr>
+        <form action="/admin/add-status-chamado" method="POST">
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label><span class="text-danger">*</span>Descrição</label>
+                    <input name="descricao" type="number" id="descricao"
+                  size="5" maxlength="5"
+                        placeholder="Nome da categoria do chamado">
+
+                    <label><span class="text-danger">*</span>Km troca</label>
+                    <input type="text" id="inputCity">
+                </div>
+
+                <div class="form-group col-md-12">
+                    <label><span class="text-danger">*</span>Data da troca</label><br>
+                    <input name="datatroca" id="datatroca" type="date">
+                </div>
+
+                 <div class="form-group col-md-12">
+                    <label><span class="text-danger">*</span>Data da troca</label><br>
+                    <input name="datatroca" id="datatroca" type="text">
+                </div>
+
+
+            </div>
+
+               <label><span class="text-danger">*</span>Descrição</label>
+      <label for="inputCity">City</label>
+      <input type="text"  id="inputCity">
+    </div>
+
+            <p>
+                <input type="consumo" id="consumoid" name="consumo" data-js="consmedio" class="form-control" size="5" />
+                <label for="consumo">Consumo médio</label>
+            </p>
+
+            <p>
+                <span class="text-danger">* </span>Campo obrigatório
+            </p>
+            <button type="submit" class="btn btn-success">Cadastrar</button>
+        </form>
+    </div>
+</div>

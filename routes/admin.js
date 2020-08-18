@@ -60,8 +60,8 @@ router.get('/cad-cat-chamado', (req, res) => {
 
 // Status do chamado
 
-router.get('/cad-statuschamado', (req, res) => {
-    res.render("admin/cad-statuschamado")
+router.get('/cad-controles', (req, res) => {
+    res.render("admin/cad-controles")
 })
 
 router.post('/add-cat-chamado', (req, res) => {
@@ -95,7 +95,7 @@ router.post('/add-status-chamado', (req, res) => {
         errors.push({ error: "Necessário preencher o campo status" })
     }
     if (errors.length > 0) {
-        res.render("admin/cad-statuschamado", { errors: errors })
+        res.render("admin/cad-controles", { errors: errors })
     } else {
         const addStatus = {
             descricao: req.body.descricao
@@ -177,13 +177,13 @@ router.get('/chamados', (req, res) => {
 
 
 // Status
-router.get('/status', (req, res) => {
+router.get('/controles', (req, res) => {
     StatusChamado.find().populate("statuschamado").then((status) => {
-        res.render("admin/status", { status: status })
+        res.render("admin/controles", { status: status })
         console.log(status)
     }).catch((erro) => {
         req.flash("error_msg", "Error: Chamado não encontrado!")
-        res.render("admin/status")
+        res.render("admin/controles")
     })
 })
 
